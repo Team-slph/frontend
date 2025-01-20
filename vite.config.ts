@@ -15,7 +15,8 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: `@use "src/styles/main.scss" as *;`
+        // additionalData: `@use "src/styles/main.scss" as *;` -> SCSS 파일 내에서 자동으로 main.scss을 불러와야 하지만 해당 경로에는 main.scss가 없음
+        additionalData: `@use "/src/styles/custom-font.scss" as *;`,
       },
     },
   },

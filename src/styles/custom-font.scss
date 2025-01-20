@@ -1,0 +1,17 @@
+@font-face {
+    font-family: "Ruslan Display";
+    src: url("/frontend/src/assets/font/RuslanDisplay.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Russo One";
+    src: url("/frontend/src/assets/font/RussoOne-Regular.woff2") format("woff2");
+}
+
+.ruslan-display {
+    font-family: "Ruslan Display", serif;
+}
+
+.russo-one {
+    font-family: "Russo One", serif;
+}

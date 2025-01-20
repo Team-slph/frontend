@@ -1,0 +1,31 @@
+.header {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background-color: #fff;
+    height: 6rem;
+
+    .header-logo-1, .header-logo-2, .header-logo-3 {
+        line-height: normal;
+        display: flex;
+        align-items: center;
+    }
+  
+    .header-logo-1 {
+      font-size: 4rem;
+      padding-top: 0.2rem;
+      color: #ff4081;
+    }
+
+    .header-logo-2 {
+        font-size: 3rem;
+        padding-bottom: 0.5rem;
+        color: #FFD301;
+    }
+
+    .header-logo-3 {
+        font-size: 4rem;
+        padding-top: 0.2rem;
+        color: #ff4081;
+    }
+  }

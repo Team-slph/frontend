@@ -1,35 +1,61 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import ConfirmButton from './components/ConfirmButton';
+import CancelButton from './components/CancelButton';
+import MainContent from './components/MainContent';
+import Modal from './components/Modal';
+import InputField from './components/InputField';
 
-function App() {
-  const [count, setCount] = useState(0)
+import './App.css';
+
+const App: React.FC = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const [searchValue, setSearchValue] = useState('');
+
+  const handleConfirm = () => {
+    alert('확인 버튼이 클릭되었습니다!');
+  };
+
+  const handleCancel = () => {
+    alert('취소 버튼이 클릭되었습니다!');
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div className="layout">
+      <Header />
+      <MainContent>
+        <h1>메인 콘텐츠 영역</h1>
+        <ConfirmButton onClick={handleConfirm} confirmText="멍멍" />
+        <CancelButton onClick={handleCancel} cancelText='냥냥' />
+        <br />
+        <button onClick={() => setIsModalOpen(true)}>모달 열기</button>
+        <Modal
+          isOpen={isModalOpen}
+          title="확인 창"
+          onClose={() => setIsModalOpen(false)}
+        >
+          <p>이 작업을 수행하시겠습니까?</p>
+          <div style={{ display: 'flex', gap: '10px', justifyContent: 'flex-end' }}>
+            <ConfirmButton onClick={() => alert('확인 클릭')} confirmText="확인" />
+            <CancelButton onClick={() => setIsModalOpen(false)} cancelText="취소" />
+          </div>
+        </Modal>
 
-export default App
+        <br />
+
+        <InputField
+          type="text"
+          value={searchValue}
+          onChange={setSearchValue}
+          showSearchIcon={true}
+        />
+      </MainContent>
+      <Footer />
+    </div>
+  );
+};
+
+export default App;

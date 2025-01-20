@@ -1,0 +1,30 @@
+.footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #f8f9fa;
+    padding: 10px 0;
+    border-top: 1px solid #ddd;
+    height: 6rem;
+  
+    .footer-button {
+      background: none;
+      border: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 14px;
+      cursor: pointer;
+  
+      .footer-icon {
+        width: 24px;
+        height: 24px;
+        margin-bottom: 5px;
+      }
+  
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+  
