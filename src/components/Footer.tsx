@@ -9,7 +9,7 @@ import SearchIcon from '../assets/search.svg';
 
 const menuItems = [
   { label: '홈', icon: HomeIcon },
-  { label: '새로운 항목', icon: MenuIcon },
+  { label: '새로운 음악', icon: MenuIcon },
   { label: '라디오', icon: RadioIcon },
   { label: '보관함', icon: PlayListIcon },
   { label: '검색', icon: SearchIcon }

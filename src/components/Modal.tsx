@@ -6,17 +6,32 @@ interface ModalProps {
   title?: string;
   children: React.ReactNode;
   onClose: () => void;
+  width?: string;
+  height?: string;
+  showCloseButton?: boolean;  // X 버튼 표시 여부
 }
 
-const Modal: React.FC<ModalProps> = ({ isOpen, title, children, onClose }) => {
+const Modal: React.FC<ModalProps> = ({ 
+  isOpen, 
+  title, 
+  children, 
+  onClose,
+  width = '400px',
+  height = 'auto',
+  showCloseButton = false,
+}) => {
   if (!isOpen) return null;
 
   return (
     <div className="modal-overlay">
-      <div className="modal-content">
-        <div className='d-flex'>
+      <div className="modal-content" style={{ width, height }}>
+        <div className='modal-header'>
           {title && <h2 className="modal-title">{title}</h2>}
-          <button className='bg-white w-25' onClick={onClose}>x</button>
+          {showCloseButton && (
+            <button className="modal-close-btn" onClick={onClose}>
+              ×
+            </button>
+          )}
         </div>
         <div className="modal-body">{children}</div>
       </div>

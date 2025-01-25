@@ -36,10 +36,16 @@
 
   .search-icon {
     position: absolute;
-    right: 15px;
-    font-size: 20px;
-    color: #aaa;
+    right: 5px;
+    bottom: 10px;
+    background: none;
+    border: none;
     cursor: pointer;
+
+    img {
+      width: 20px;
+      height: 20px;
+    }
   }
 
   .input-error-message {

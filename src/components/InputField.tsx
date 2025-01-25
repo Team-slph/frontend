@@ -1,5 +1,6 @@
 import React from 'react';
 import './InputField.scss';
+import searchIcon from '../assets/search.svg';
 
 interface InputFieldProps {
   type?: 'text' | 'password' | 'email' | 'number';
@@ -9,6 +10,7 @@ interface InputFieldProps {
   label?: string;
   error?: string;
   showSearchIcon?: boolean;
+  width?: string;  // 너비 조절 prop 추가
 }
 
 const InputField: React.FC<InputFieldProps> = ({
@@ -18,10 +20,11 @@ const InputField: React.FC<InputFieldProps> = ({
   onChange,
   label,
   error,
-  showSearchIcon = false
+  showSearchIcon = false,
+  width = '100%',  // 기본 너비 설정
 }) => {
   return (
-    <div className="input-field">
+    <div className="input-field" style={{ width }}>
       {label && <label className="input-label">{label}</label>}
       <div className="input-wrapper">
         <input
@@ -31,7 +34,11 @@ const InputField: React.FC<InputFieldProps> = ({
           onChange={(e) => onChange(e.target.value)}
           className={`input-box ${error ? 'input-error' : ''}`}
         />
-        {showSearchIcon && <button className="search-icon">🔍</button>}
+        {showSearchIcon && (
+          <button className="search-icon">
+            <img src={searchIcon} alt="Search" />
+          </button>
+        )}
       </div>
       {error && <span className="input-error-message">{error}</span>}
     </div>

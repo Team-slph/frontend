@@ -1,7 +1,17 @@
 .main-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    height: calc(100vh - 14.2rem);
-    padding: 20px;
-  }
+  flex: 1;
+  overflow-y: auto; // 내부 콘텐츠가 넘칠 경우 스크롤 가능
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+// /intro 페이지인 경우 전체 화면 차지
+.full-height {
+  height: 100vh; // 전체 화면 높이
+}
+
+// 헤더(6rem) + 푸터(6rem) 제외한 높이
+.adjusted-height {
+  height: calc(100vh - 12rem);
+}
