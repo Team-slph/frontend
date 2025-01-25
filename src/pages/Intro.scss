@@ -1,0 +1,125 @@
+.pre-login-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 1s ease-in-out;
+
+  &.dark-bg {
+    background-color: #011946;
+  }
+
+  &.white-bg {
+    background-color: #ffffff;
+  }
+}
+
+.pre-login-title-1, .pre-login-title-2, .pre-login-title-3 {
+  line-height: normal;
+}
+
+.pre-login-title-1 {
+  font-size: 4rem;
+  font-weight: bold;
+  padding-top: 0.2rem;
+  transition: color 1s ease-in-out;
+  color: #ff4081;
+
+  .white-bg & {
+    color: #ff4081;
+  }
+}
+
+.pre-login-title-2 {
+  font-size: 3rem;
+  font-weight: bold;
+  padding-top: 0.2rem;
+  transition: color 1s ease-in-out;
+  color: #ff4081;
+
+  .white-bg & {
+    color: #FFD301;
+  }
+}
+
+.pre-login-title-3 {
+  font-size: 4rem;
+  font-weight: bold;
+  padding-top: 0.2rem;
+  transition: color 1s ease-in-out;
+  color: #ff4081;
+
+  .white-bg & {
+    color: #ff4081;
+  }
+}
+
+.login-buttons {
+  bottom: 20%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in-out 1s forwards;
+  
+  button {
+    width: 280px;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    align-items: center;
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+
+    .button-icon {
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      left: 10px;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    p {
+      flex: 1;  // 텍스트를 중앙에 위치
+      text-align: center;
+      margin: 0;
+    }
+  }
+
+  .kakao-login, .spotify-login, .google-login {
+    align-items: center;
+  }
+
+  .kakao-login {
+    background-color: #ffeb00;
+    color: #000;
+  }
+
+  .spotify-login {
+    background-color: #03c75a;
+    color: #000;
+  }
+
+  .google-login {
+    background-color: #f2f2f2;
+    color: #000;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
